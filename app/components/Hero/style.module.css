@@ -1,0 +1,92 @@
+.button {
+  position: relative;
+  border: 1px solid #C778DD;
+  padding: 8px 16px;
+  margin-top: 32px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.borderTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #C778DD;
+  animation: border-top 2s ease-in-out infinite;
+}
+
+.borderRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 0;
+  background-color: #C778DD;
+  animation: border-right 2s ease-in-out 0.5s infinite;
+}
+
+.borderBottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #C778DD;
+  animation: border-bottom 2s ease-in-out 1s infinite;
+}
+
+.borderLeft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: #C778DD;
+  animation: border-left 2s ease-in-out 1.5s infinite;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  background-color: #C778DD;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.button:hover .fill {
+  transform: translateX(0);
+}
+
+.label {
+  position: relative;
+  z-index: 10;
+  color: #FFFFFF;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes border-top {
+  0%   { width: 0;    left: 0; }
+  50%  { width: 100%; left: 0; }
+  100% { width: 0;    left: 100%; }
+}
+
+@keyframes border-right {
+  0%   { height: 0;    top: 0; }
+  50%  { height: 100%; top: 0; }
+  100% { height: 0;    top: 100%; }
+}
+
+@keyframes border-bottom {
+  0%   { width: 0;    right: 0; }
+  50%  { width: 100%; right: 0; }
+  100% { width: 0;    right: 100%; }
+}
+
+@keyframes border-left {
+  0%   { height: 0;    bottom: 0; }
+  50%  { height: 100%; bottom: 0; }
+  100% { height: 0;    bottom: 100%; }
+}
