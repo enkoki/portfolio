@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: "pages-preview"
-  cancel-in-progress: true 
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -54,6 +54,7 @@ jobs:
           path: ./out
 
   deploy:
+    if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
